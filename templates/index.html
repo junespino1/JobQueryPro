@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobQueryPro</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Submit Job Application Query</h1>
+
+    <!-- Flex container to hold the form and answer box side by side -->
+    <div class="container">
+        <!-- The Form -->
+        <form id="job-form" action="/submit" method="POST">
+            <label for="description">Description of the Position:</label>
+            <textarea id="description" name="description" rows="4" cols="50"></textarea>
+
+            <label for="responsibilities">Responsibilities:</label>
+            <textarea id="responsibilities" name="responsibilities" rows="4" cols="50"></textarea>
+
+            <label for="qualifications">Qualifications:</label>
+            <textarea id="qualifications" name="qualifications" rows="4" cols="50"></textarea>
+
+            <!-- New button to query candidates -->
+            <button type="button" id="search-btn">Search Candidates</button>
+
+            <!-- Query Box (initially disabled) -->
+            <label for="query">Query:</label>
+            <textarea id="query" name="query" rows="4" cols="50" disabled></textarea>
+
+            <!-- Submit button for interacting with query -->
+            <button type="submit" id="submit-btn" disabled>Submit Query</button>
+            
+            <!-- Reset button -->
+            <button type="button" id="reset-btn">Reset</button>
+        </form>
+
+        <!-- Answer display box -->
+        <div id="answer-container">
+            <div id="answer-box">
+                <h2>Answers and Information</h2>
+                <div id="answer-content">
+                    {% if answers %}
+                        {% for answer in answers %}
+                            <p><strong>Message:</strong> {{ answer }}</p>
+                        {% endfor %}
+                    {% else %}
+                        <p>Answers will appear here after you submit the form.</p>
+                    {% endif %}
+                </div>
+            </div>
+            <!-- Save button positioned below the answers box -->
+            <div class="save-container">
+                <button type="button" id="save-btn">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

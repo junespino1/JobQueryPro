@@ -1,0 +1,120 @@
+/* Container to hold form and answer box side by side */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1200px;  /* Adjusts the container size */
+    margin-top: 20px;
+}
+
+/* Style the form container */
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 48%;  /* Set width of form to take half the container */
+    display: grid;
+    grid-template-columns: 1fr 2fr;  /* Two-column layout */
+    column-gap: 20px;  /* Space between columns */
+    row-gap: 20px;  /* Space between rows */
+}
+
+/* Style the headings */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 24px;
+    grid-column: span 2;  /* Span heading across two columns */
+}
+
+/* Style the labels */
+label {
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+}
+
+/* Style text input fields */
+textarea, input[type="text"] {
+    width: 100%;  /* Make input fields and text areas full width */
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+/* Style the submit button */
+button {
+    grid-column: span 2;  /* Span submit button across two columns */
+    width: 100%;
+    padding: 10px;
+    background-color: #5cb85c;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #4cae4c;
+}
+
+/* Container to hold the answer box and save button */
+#answer-container {
+    width: 48%;  /* Make it occupy the same width as the form */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Style the answer display box */
+#answer-box {
+    background-color: #e9f7ef; /* Light green background to differentiate */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    margin-bottom: 20px; /* Add some spacing between the answer box and the save button */
+}
+
+#answer-box h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#answer-content {
+    max-height: 300px;  /* Adjust height as needed */
+    overflow-y: auto;   /* Allow scrolling if content overflows */
+}
+
+#answer-box p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+/* Style the save button */
+.save-container {
+    display: flex;
+    justify-content: center;
+}
+
+#save-btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#save-btn:hover {
+    background-color: #0056b3;
+}
